@@ -1,31 +1,36 @@
-server:
-  port: 8080  # Assign a dynamic port
-
 spring:
+  application:
+    name: api-gateway
+  config:
+    import: "optional:configserver:http://localhost:8888/api-gateway/default" # Correct format for importing from Config Server
   cloud:
-    gateway:
-      routes:
-        - id: user-service
-          uri: lb://user-service
-          predicates:
-            - Path=/users/**
-        
-        - id: event-service
-          uri: lb://event-service
-          predicates:
-            - Path=/events/**
+    config:
+      uri: http://localhost:8888
 
-        - id: ticket-service
-          uri: lb://ticket-service
-          predicates:
-            - Path=/tickets/**
+server:
+  port: 8080
+
+cloud:
+  gateway:
+    routes:
+      - id: user-service
+        uri: lb://user-service
+        predicates:
+          - Path=/users/**
+      - id: event-service
+        uri: lb://event-service
+        predicates:
+          - Path=/events/**
+      - id: ticket-service
+        uri: lb://ticket-service
+        predicates:
+          - Path=/tickets/**
 
 eureka:
   client:
     register-with-eureka: true
     serviceUrl:
       defaultZone: http://service-registry:8761/eureka/
-
   instance:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
@@ -33,3 +38,9 @@ eureka:
     lease-expiration-duration-in-seconds: 10
     metadata-map:
       instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
