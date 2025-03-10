@@ -25,14 +25,14 @@ eureka:
   client:
     register-with-eureka: true
     serviceUrl:
-      defaultZone: http://service-registry:8761/
+      defaultZone: http://service-registry:8761/eureka
   instance:
     prefer-ip-address: true
-    # instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
     lease-renewal-interval-in-seconds: 5
     lease-expiration-duration-in-seconds: 10
-    # metadata-map:
-      # instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    metadata-map:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 
 management:
   endpoints:
