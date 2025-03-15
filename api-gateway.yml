@@ -9,15 +9,15 @@ cloud:
   gateway:
     routes:
       - id: user-service
-        uri: lb://user-service
+        uri: http://user-service:8081
         predicates:
           - Path=/users/**
       - id: event-service
-        uri: lb://event-service
+        uri: http://event-service:8082
         predicates:
           - Path=/events/**
       - id: ticket-service
-        uri: lb://ticket-service
+        uri: http://ticket-service:8083
         predicates:
           - Path=/tickets/**
 
