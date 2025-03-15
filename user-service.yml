@@ -34,4 +34,4 @@ management:
         include: "*"
 
 security:
-  secret_key: ticketqube
+  secret-key: ticketqube
