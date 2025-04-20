@@ -34,4 +34,4 @@ management:
         include: "*"
 
 security:
-  secret-key: .s$_H"O7*Q+qBKjltO3de5Pn-%WI?hW&FXkf0
+  secret-key: s$_H"O7*Q+qBKjltO3de5Pn-%WI?hW&FXkf0
