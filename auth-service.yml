@@ -34,4 +34,4 @@ management:
         include: "*"
 
 security:
-  secret-key: U29tZVNlY3JldEtleUluQmFzZTY0Rm9ybWF0
+  secret-key: b6c70455e19a0180e5b1abd97cab4041be7a6131ac436170ed7b88947b9baa09
