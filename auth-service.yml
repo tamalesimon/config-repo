@@ -1,5 +1,5 @@
 server:
-  port: 8006  # Assign a dynamic port
+  port: 8082  # Assign a dynamic port
 
 spring:
   application:
