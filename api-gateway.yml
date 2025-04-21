@@ -8,15 +8,24 @@ spring:
 cloud:
   gateway:
     routes:
+      - id: auth-service
+        uri: lb://auth-service
+        predicates:
+          - Path=/api/v1/auth/**
+        filters:
+          - StripPrefix=3
+
       - id: user-service
         uri: lb://user-service
         predicates:
           - Path=/auth/**
           - Path=/users/**
+
       - id: event-service
         uri: lb://event-service
         predicates:
           - Path=/events/**
+          
       - id: ticket-service
         uri: lb://ticket-service
         predicates:
