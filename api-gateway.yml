@@ -49,6 +49,9 @@ management:
     web:
       exposure:
         include: "*"
+  endpoint:
+    routes:
+      enabled: true # Explicitly enable the /routes endpoint
 
 security:
   secret-key: ticketqube
