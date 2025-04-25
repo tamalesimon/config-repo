@@ -11,9 +11,9 @@ cloud:
       - id: auth-service
         uri: lb://auth-service
         predicates:
-          - Path=/api/v1/auth/**
+          - Path=/token
         filters:
-          - StripPrefix=3
+          - RewritePath=/token, /api/v1/auth/token
 
       - id: user-service
         uri: lb://user-service
