@@ -31,6 +31,10 @@ cloud:
         predicates:
           - Path=/tickets/**
 
+    discovery:
+      locator:
+        enabled: true
+
 eureka:
   client:
     register-with-eureka: true

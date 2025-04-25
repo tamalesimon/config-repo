@@ -15,8 +15,10 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 
   cloud:
-    discovery:
-      enabled: true
+    gateway:
+      discovery:
+        locator:
+          enabled: true
 
 eureka:
   client:
