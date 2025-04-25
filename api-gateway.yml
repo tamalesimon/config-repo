@@ -52,3 +52,7 @@ management:
 
 security:
   secret-key: ticketqube
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
