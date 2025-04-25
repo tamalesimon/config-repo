@@ -9,7 +9,7 @@ cloud:
   gateway:
     routes:
       - id: auth-service
-        uri: lb://auth-service
+        uri: lb://api-gateway:0f9ff430b485d7b273968196826fac04
         predicates:
           - Path=/token
         filters:
