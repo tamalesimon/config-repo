@@ -39,3 +39,7 @@ management:
 
 security:
   secret-key: b6c70455e19a0180e5b1abd97cab4041be7a6131ac436170ed7b88947b9baa09
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
